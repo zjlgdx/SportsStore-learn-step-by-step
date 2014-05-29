@@ -5,6 +5,7 @@ using Microsoft.Practices.Unity.Configuration;
 using Moq;
 using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
+using SportsStore.Domain.Concrete;
 
 namespace SportsStore.WebUI.App_Start
 {
@@ -40,9 +41,9 @@ namespace SportsStore.WebUI.App_Start
             // container.LoadConfiguration();
 
             // TODO: Register your types here
-            // container.RegisterType<IProductRepository, ProductRepository>();
+             container.RegisterType<IProductRepository, EFProductRepository>();
 
-            RegisterMockData(container);
+            //RegisterMockData(container);
         }
 
         private static void RegisterMockData(IUnityContainer container)
